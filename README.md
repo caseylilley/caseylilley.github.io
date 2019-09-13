@@ -9,4 +9,4 @@ These estimations are still rudimentary, as not all settlements located in a gri
 [View the article](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-4-W8/23/2018/isprs-archives-XLII-4-W8-23-2018.pdf)
 
 
-[My First QGIS Model](qgismodelDirDis.md)
+[My First QGIS Model](qgisModelDirDis.md)
