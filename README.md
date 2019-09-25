@@ -1,3 +1,8 @@
+## Modeling Distance and Direction in QGIS
+Read more about how I built a model to show distance and direction of polygons from a point in QGIS for the first lab assignment:
+[My First QGIS Model](qgisModelDirDis.md)
+
+
 ## FOSS4G Conference Article Blog Post
 ### Utilizing Open Data for Energy Access Planning in Tanzania
 
