@@ -1,5 +1,5 @@
 ## QGIS Model for Direction and Distance
-In the first lab, we created a model to calculate direction and distance from a point. A model like this can be useful to visualize geographic theories such as the Bid Rent Model. 
+In the first lab, we created a model to calculate direction and distance from a point. A model like this can be useful to visualize geographic theories such as the Bid Rent Model, and understand how phenomena change across space in relation to a city center. 
 For our purposes, we calculated direction and distance of city tracts from a central business district to look at the distribution of median gross rent around a city center. We started by examining Chicago as a case study to develop and test [the model](https://caseylilley.github.io/Dist_and_dir_updated.model3), pictured below.  
 
 ![model_image](https://caseylilley.github.io/DistanceDirectionModel.PNG)
