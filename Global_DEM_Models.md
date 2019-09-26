@@ -10,4 +10,4 @@ Using ASTER data Model V003 from the US and Japan, I conducted a basic terrain a
 
 ![flowaccumulation](GoodFlowAccum.PNG)
 
-![streams](ChannelNetworkTotal.PNG)
+![streams](ChannelNetworkTotal.png)
