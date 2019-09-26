@@ -1,3 +1,7 @@
+## Using SAGA to Model Global Digital Elevation 
+Using ASTER data, I visualized a hydrological landscape around Mount Kilimanjaro: [Terrain Analysis](Global_DEM_Models.md)
+
+
 ## Modeling Distance and Direction in QGIS
 Read more about how I built a model to show distance and direction of polygons from a point in QGIS for the first lab assignment:
 [My First QGIS Model](qgisModelDirDis.md)
