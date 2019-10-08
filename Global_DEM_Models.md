@@ -16,3 +16,16 @@ Now we can use a flow accumulation tool to calculate where the water will go. Ea
 
 Finally, I ran a channel network to determine where the streams in this landscape are. Once enough water accumulates in each cell from the flow accumulation (as the value increases), then the model assumes that a stream has formed. I overlayed this map onto the hillshade visualization to better see and understand the landscape terrain.
 ![streams](GoodChannelNetwork.PNG)
+
+##Week 4 Batch Processing and Error Propagation
+
+This lab drills down further into sources of error, why those sources of error may exist, and exploring different inputs. More description of lab...
+
+We started by writing and running batch scripts to automate much of the hydological analysis process. We also brought in the NUM files for both ASTER and SRTM to visualize the sources of data for each, and then trace back error to different sources of data. 
+[Insert all batch processes files]
+
+[visual of NUM files each]
+
+[visual of DEM files each with different sources of data]
+
+[QGIS visuals of error] and explanation. 
