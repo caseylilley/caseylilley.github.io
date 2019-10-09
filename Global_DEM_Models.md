@@ -39,3 +39,10 @@ With all of this information, we can see that steep mountainous slopes and areas
 ![Channel Network Lakes](QGISvisualChannels.png)
 
 Based on this analysis, I would say that SRTM data is preferable because it makes it easier to distinguish and filter out water-masked elevation features. Also, the sections of very steep slope (shown in bright blue in the visualization of NUM data sources) are taken from a different data source (GMTED2010 oversampled from 7.5 arc second postings) which further clarifies and draws attention to the steep slope, where elevation is less certain. 
+
+Data Sources:
+NASA/METI/AIST/Japan Spacesystems, and U.S./Japan ASTER Science Team. ASTER Global Digital Elevation Model V003. 2019, distributed by NASA EODIS Land Processes DAAC
+
+NASA JPL. NASA Shuttle Radar Topography Mission Global 1 arc second. 2013, distributed by NASA EOSDIS Land Processes DAAC
+
+Ran using SAGA version 6.2
