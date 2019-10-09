@@ -1,5 +1,5 @@
 ## Using SAGA to Model Global Digital Elevation 
-Using ASTER data, I visualized a hydrological landscape around Mount Kilimanjaro: [Terrain Analysis](Global_DEM_Models.md)
+Using ASTER data, I visualized a hydrological landscape around Mount Kilimanjaro. Then I created a batch processing algorithm to automate the hydrological analysis and look for sources of error in SRTM and ASTER data: [Terrain Analysis](Global_DEM_Models.md)
 
 
 ## Modeling Distance and Direction in QGIS
