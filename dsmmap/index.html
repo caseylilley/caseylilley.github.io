@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/SubwardsbyPercentBuildingsFlooded_1.js"></script>
+        <script src="data/Water_2.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:19, minZoom:6
+        }).fitBounds([[-7.300014725278262,38.95177863036495],[-6.392218990379017,39.65957677911522]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://pdickson2.github.io">pdickson2</a> |
+<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>
+&middot;
+<a href="https://leafletjs.com" title="A JS library for interactive
+maps">Leaflet</a> &middot;
+<a href="https://qgis.org" target="_blank">QGIS</a>');
+
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            map.setMaxBounds(map.getBounds());
+        }
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>', '<a href="https://geonode.resilienceacademy.ac.tz/" target="_blank">Resilience Academy</a>',
+        });
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        function pop_SubwardsbyPercentBuildingsFlooded_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? Autolinker.link(String(feature.properties['fid'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['subward'] !== null ? Autolinker.link(String(feature.properties['subward'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['floods'] !== null ? Autolinker.link(String(feature.properties['floods'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['buildcnt'] !== null ? Autolinker.link(String(feature.properties['buildcnt'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['pctflood'] !== null ? Autolinker.link(String(feature.properties['pctflood'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SubwardsbyPercentBuildingsFlooded_1_0(feature) {
+            if (feature.properties['pctflood'] >= 0.000000 && feature.properties['pctflood'] <= 0.000000 ) {
+                return {
+                pane: 'pane_SubwardsbyPercentBuildingsFlooded_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(26,150,65,0.7490196078431373)',
+            }
+            }
+            if (feature.properties['pctflood'] >= 0.000000 && feature.properties['pctflood'] <= 19.324090 ) {
+                return {
+                pane: 'pane_SubwardsbyPercentBuildingsFlooded_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(166,217,106,0.7490196078431373)',
+            }
+            }
+            if (feature.properties['pctflood'] >= 19.324090 && feature.properties['pctflood'] <= 35.839844 ) {
+                return {
+                pane: 'pane_SubwardsbyPercentBuildingsFlooded_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,192,0.7490196078431373)',
+            }
+            }
+            if (feature.properties['pctflood'] >= 35.839844 && feature.properties['pctflood'] <= 58.412214 ) {
+                return {
+                pane: 'pane_SubwardsbyPercentBuildingsFlooded_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,174,97,0.7490196078431373)',
+            }
+            }
+            if (feature.properties['pctflood'] >= 58.412214 && feature.properties['pctflood'] <= 76.001931 ) {
+                return {
+                pane: 'pane_SubwardsbyPercentBuildingsFlooded_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,25,28,0.7490196078431373)',
+            }
+            }
+        }
+        map.createPane('pane_SubwardsbyPercentBuildingsFlooded_1');
+        map.getPane('pane_SubwardsbyPercentBuildingsFlooded_1').style.zIndex = 401;
+        map.getPane('pane_SubwardsbyPercentBuildingsFlooded_1').style['mix-blend-mode'] = 'normal';
+        var layer_SubwardsbyPercentBuildingsFlooded_1 = new L.geoJson(json_SubwardsbyPercentBuildingsFlooded_1, {
+            attribution: '',
+            pane: 'pane_SubwardsbyPercentBuildingsFlooded_1',
+            onEachFeature: pop_SubwardsbyPercentBuildingsFlooded_1,
+            style: style_SubwardsbyPercentBuildingsFlooded_1_0,
+        });
+        bounds_group.addLayer(layer_SubwardsbyPercentBuildingsFlooded_1);
+        map.addLayer(layer_SubwardsbyPercentBuildingsFlooded_1);
+        function pop_Water_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? Autolinker.link(String(feature.properties['fid'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? Autolinker.link(String(feature.properties['osm_id'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Water_2_0() {
+            return {
+                pane: 'pane_Water_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(166,166,166,1.0)',
+            }
+        }
+        map.createPane('pane_Water_2');
+        map.getPane('pane_Water_2').style.zIndex = 402;
+        map.getPane('pane_Water_2').style['mix-blend-mode'] = 'normal';
+        var layer_Water_2 = new L.geoJson(json_Water_2, {
+            attribution: '',
+            pane: 'pane_Water_2',
+            onEachFeature: pop_Water_2,
+            style: style_Water_2_0,
+        });
+        bounds_group.addLayer(layer_Water_2);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/Water_2.png" /> Water': layer_Water_2,'Subwards by Percent Buildings Flooded<br /><table><tr><td style="text-align: center;"><img src="legend/SubwardsbyPercentBuildingsFlooded_1_00000.png" /></td><td>0.0 - 0.0</td></tr><tr><td style="text-align: center;"><img src="legend/SubwardsbyPercentBuildingsFlooded_1_001931.png" /></td><td>0.0 - 19.3</td></tr><tr><td style="text-align: center;"><img src="legend/SubwardsbyPercentBuildingsFlooded_1_1933582.png" /></td><td>19.3 - 35.8</td></tr><tr><td style="text-align: center;"><img src="legend/SubwardsbyPercentBuildingsFlooded_1_3585843.png" /></td><td>35.8 - 58.4</td></tr><tr><td style="text-align: center;"><img src="legend/SubwardsbyPercentBuildingsFlooded_1_5847604.png" /></td><td>58.4 - 76.0</td></tr></table>': layer_SubwardsbyPercentBuildingsFlooded_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
