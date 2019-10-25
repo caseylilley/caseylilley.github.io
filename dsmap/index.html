@@ -40,7 +40,7 @@
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
-            map.setMaxBounds(map.getBounds());
+            map.setMaxBounds(map.[[-7.300014725278262,38.95177863036495],[-6.392218990379017,39.65957677911522]]);
         }
         var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             opacity: 1.0,
@@ -126,7 +126,7 @@
                 fillColor: 'rgba(253,174,97,0.7490196078431373)',
             }
             }
-            if (feature.properties['pctflood'] >= 58.412214 && feature.properties['pctflood'] <= 76.001931 ) {
+            if (feature.properties['pctflood'] >= 58.412214 && feature.properties['pctflood'] <= 85 ) {
                 return {
                 pane: 'pane_SubwardsbyPercentBuildingsFlooded_1',
                 opacity: 1,
