@@ -1,5 +1,8 @@
-##Modeling Resiliency in Dar Es Salaam Using OSM
-[Map Density of Flooded Buildings by Subward](caseylilley.github.io/dsmap/index.html)
+## Modeling Flood Resiliency in Dar Es Salaam Using OSM
+By using data from the Resilience Academy and Ramani Huria, for Lab 6 I analyzed one aspect to flood resiliency in Dar Es Salaam subwards. What buildings are particularly vulnerable to flooding based on their location within a floodplain? Working with Paige, we analyzed the density of buildings in each subward that are located in a floodplain (land designated as "water" or "wetland" in Resiliency Academy).We found...
+
+Check it out for yourself here! [Map Density of Flooded Buildings by Subward](caseylilley.github.io/dsmap/index.html)
+
 
 ## Using SAGA to Model Global Digital Elevation 
 Using ASTER data, I visualized a hydrological landscape around Mount Kilimanjaro. Then I created a batch processing algorithm to automate the hydrological analysis and look for sources of error in SRTM and ASTER data: [Terrain Analysis](Global_DEM_Models.md)
