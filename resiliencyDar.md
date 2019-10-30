@@ -1,4 +1,4 @@
-## Modelling Resiliency in Dar Es Salaam with OSM
+## Modelling Flood Resiliency in Dar Es Salaam with OSM
 
 By using data from the Resilience Academy and Ramani Huria, for Lab 6 I analyzed one aspect to flood resiliency in Dar Es Salaam subwards.
 What subwards are particularly vulnerable to flooding based on their location within a floodplain? Working with Paige, we analyzed the 
