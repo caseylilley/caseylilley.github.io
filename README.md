@@ -1,5 +1,5 @@
 ## Modeling Flood Resiliency in Dar Es Salaam Using OSM
-By using data from the Resilience Academy and Ramani Huria, for Lab 6 I analyzed the density of buildings in each subward in Dar Es Salaam, Tanzania located in a floodplain. Read more about the analysis and view the map online: [Resiliency in Dar Es Salaam](caseylilley.github.io/resiliencyDar.md)
+By using data from the Resilience Academy and Ramani Huria, for Lab 6 I analyzed the density of buildings in each subward in Dar Es Salaam, Tanzania located in a floodplain. Read more about the analysis and view the map online: [Resiliency in Dar Es Salaam](resiliencyDar.md)
 
 
 ## Using SAGA to Model Global Digital Elevation 
