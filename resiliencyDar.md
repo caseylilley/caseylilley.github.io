@@ -7,9 +7,9 @@ We used layers from Open Street Maps to get data on the buildings in Dar Es Sala
 This analysis had 4 main steps, and then smaller steps within each element of the analysis:
 1. Spatially defining an area for the floodplain: defined by land designated as "water" or "wetland" in Open Street Map. 
 2. Find which buildings lie in a flooded water area
-   i. Add a column to the buildings layer for whether it is in the flooded area (y/n)
-   ii. Convert each building to a point feature first to speed up this large calculation
-   iii. Intersect with the floodplain layer to populate column
+ i. Add a column to the buildings layer for whether it is in the flooded area (y/n)
+ ii. Convert each building to a point feature first to speed up this large calculation
+ iii. Intersect with the floodplain layer to populate column
 3. Find which subward each building is located in   
 i. Select buildings from initial polygons layer
 ii. Add a column to the buildings layer for what subward it is in
