@@ -8,19 +8,19 @@ This analysis had 4 main steps, and then smaller steps within each element of th
 1. Spatially defining an area for the floodplain: defined by land designated as "water" or "wetland" in Open Street Map. 
 
 2. Find which buildings lie in a flooded water area
- i. Add a column to the buildings layer for whether it is in the flooded area (y/n)
- ii. Convert each building to a point feature first to speed up this large calculation
- iii. Intersect with the floodplain layer to populate column
+   i. Add a column to the buildings layer for whether it is in the flooded area (y/n)
+   ii. Convert each building to a point feature first to speed up this large calculation
+   iii. Intersect with the floodplain layer to populate column
  
 3. Find which subward each building is located in   
-i. Select buildings from initial polygons layer
-ii. Add a column to the buildings layer for what subward it is in
-iii. Intersect bulidings with the subwards layer from Resiliency Academy to populate column
+   i. Select buildings from initial polygons layer
+   ii. Add a column to the buildings layer for what subward it is in
+   iii. Intersect bulidings with the subwards layer from Resiliency Academy to populate column
 
 4. Calculate percentage of flooded buildings by subward
-        i. Add 3 columns to the subwards layer for the count of flooded buildings, total buildings, and percent flooded
-        ii. Join the buildings layer to the subwards layer by subward, counting the total number of buildings in each subward and summing the total number of flooded buildings in each subward
-        iii. Do a field calculator to find the percentage of buildings in a floodplain in each subward
+   i. Add 3 columns to the subwards layer for the count of flooded buildings, total buildings, and percent flooded
+   ii. Join the buildings layer to the subwards layer by subward, counting the total number of buildings in each subward and summing the total number of flooded buildings in each subward
+   iii. Do a field calculator to find the percentage of buildings in a floodplain in each subward
 
 View the [SQL code](caseylilley.github.io/lab6.sql) for this analysis.
 
