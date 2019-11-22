@@ -1,6 +1,8 @@
 ## Twitter Use Case - Spatio-Temporal Analysis of Users' Sentiments Across Space
 To learn more about the different uses and analyses of twitter data, I reviewed an [article](twittercase.md) investigating public sentiment across space using tweets.
 
+## Vulnerability Analysis and Issues of Reproducability in GIS
+For this [lab](vul.md), we attempted to reproduce an analysis conducted by Malcomb et al. on Malawi household climactic vulnerability. Our process revealed several issues in reproducibility and the importance of considering error and uncertainty, especially in the creation of social vulnerability indices. 
 
 ## Modeling Flood Resiliency in Dar Es Salaam Using OSM
 By using data from the Resilience Academy and Ramani Huria, for Lab 6 I analyzed the density of buildings in each subward in Dar Es Salaam, Tanzania located in a floodplain. Read more about the analysis and view the map online: [Resiliency in Dar Es Salaam](resiliencyDar.md)
