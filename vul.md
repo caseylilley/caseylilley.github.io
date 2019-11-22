@@ -4,10 +4,10 @@ Reproducibility, or obtaining the same results with the same input data, methods
 
 ## Malcomb et al.'s Methodology
 Malcomb et al. analyzed the drivers of vulnerability at the household level in Malawi with the intention of creating a policy relevant climatic vulnerability model that can address what areas are most vulnerable and where development solutions should be applied. They utilized elements of exposure, sensitivity, and adaptive capacity to calculate an overall vulnerability assessment across Malawi. After conducting interviews with households to better understand perceptions of climate change, adaptation, governance, vulnerability, and foreign aid, Malcomb et al. quantified the relative importance of different factors contributing to assets of land, livestock, and income, and access to markets, food, water, health care, and labor, livlihood sensitivity based on crop productivity and natural resource use in recovering from disasters, and finally physical exposure to recurring floods and droughts. The authors then used data from the Demographic and Health Survey, Famine Early Warning Network, and UNEP/ GRID-Europe to populate the fields they found to be important in each element of vulnerability. This table shows the primary framework of indicators they used, and the weights they assigned them based on their local knowledge through interviews and previous literature on vulnerability. 
-![Weights](MalcombWeights.PNG)
+![Weights](MalcombWeights.png)
 
 They then normalized each indicator variable from zero to five to represent the varying conditions for a household, with zero being the worst and five benig the best. The authors also disaggregated the DHS indicators to the village level, and then combined them to conduct the analysis at the administrative scale of Traditional Authorities. The overall score is then represented by the equation: household reselience = adaptive capacity + livelihood sensitivity - physical exposure, creating a composite map.
-![Fig5](MalcombMap.PNG)
+![Fig5](MalcombMap.png)
 
 ## Methodology to Reproduce Analysis
 Data Sources:
@@ -29,7 +29,7 @@ We quickly realized several potential issues for this part of the analysis. We h
 
 ## Making the Model: Putting it all together
 Finally, we put these data sources together to try to reproduce Malcomb et al.'s Figure 4. Professor Holler gave us an initial [model](vulnerability.model3) to clip and correctly rasterize each layer so they match. This analysis used a geographic reference system of WGS 84 - EPSG:4326. Then I did the reclass steps described above for flood and drought risk layers, and combined all layers with a raster calculator based on Malcomb et al.'s equation. We needed to invert the adaptive capacity score so that a high score for capacity correlates with a high vulnerability. Thus, the equation was ((2-Adaptive Capacity)(0.40)) + ((Drought Exposure)(0.20)) + (Flood Risk(0.20)). But this [initial map]() was at a coarser resolution than Malcolm et al.'s model, so I altered the [model](vulnerability.Finer.model3) to include a parameter to define resolution. [image of model2](ModelResolution.JPG) This parameter defaults to 0.041667 decimal degrees - the final resolution I used - but a user can input their own number. This produced a final map pictured below.
-!(MalcolmReproduce.pdf)
+![reproduce](MalcolmReproduce.pdf)
 
 ## Analysis and Discussion
 Clearly this map has notable differences from the Figure presented by Malcomb et al., despite our efforts as a class to closely follow the methods to reproduce the results. Notably, you can see different pockets of high vulnerability in the Northern region of the country, and overall there appears to be higher vulnerability in our version of the analysis than Malcolm et al.'s.
