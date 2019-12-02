@@ -1,3 +1,6 @@
+## Analyzing the Content and Spatial Distribution of Tweets about Hurricane Dorian: Real Storm Surge or Sharpie Maps?
+In [lab 10](dorian2.md), we conducted an analysis of the content of twitter activity during Hurricane Dorian, and mapped the hotspots of activity to analyze whether the real path of the storm or President Trump's sharpie maps had more of an affect on tweets about the storm.
+
 ## Twitter Use Case - Spatio-Temporal Analysis of Users' Sentiments Across Space
 To learn more about the different uses and analyses of twitter data, I reviewed an [article](twittercase.md) investigating public sentiment across space using tweets.
 
