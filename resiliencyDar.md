@@ -6,12 +6,12 @@ We used layers from Open Street Maps to get data on the buildings in Dar Es Sala
 
 # Loading the Data into QGIS with osm2pgsql
 1. With the data as shapefile, load the given .csv into QGIS by adding a deliminated text layer. This table has no geometry yet.
-2. Connect to a Database: add a new connection for PostGIS, and open database manager. Next import the data into the database with import layer/file. Using a [batch script](convertOSM (1).bat) developed by Professor Holler, change the database name to your database, and the user name to your user name in Notepad ++.
-3. Select which features and tags to load: edit this [dsm.style file](dsm (1).style) to select the tags and shape features important in your analysis. We added a tag for all natural and water features for the floodplain analysis.
+2. Connect to a Database: add a new connection for PostGIS, and open database manager. Next import the data into the database with import layer/file. Using a [batch script](convertOSMholler.bat) developed by Professor Holler, change the database name to your database, and the user name to your user name in Notepad ++.
+3. Select which features and tags to load: edit this [dsm.style file](dsmholler.style) to select the tags and shape features important in your analysis. We added a tag for all natural and water features for the floodplain analysis.
 4. Run the batch script, and then transform the data from WGS84 to UTM Zone 36S.
 5. To load the Resiliency Academy Data into QGIS, add a connection to a WFS feature layer using the Resiliency Academy [URL]( https://geonode.resilienceacademy.ac.tz/geoserver/ows). We added the 'Dar es Salaam Administrative Sub-wards' layer from RA. Then you can load the layer into your database with DB Manager by importing a layer/file. Make sure to change the primary ley to the FID column as a unique ID, convert field names to lower case, and create a spatial index to avoid any issues later on in the analysis!
 
-
+# Analysis
 This analysis had 4 main steps, and then smaller steps within each element of the analysis:
 1. Spatially defining an area for the floodplain: defined by land designated as "water" or "wetland" in Open Street Map. 
 
