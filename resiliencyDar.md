@@ -4,6 +4,11 @@ By using data from the Resilience Academy and Ramani Huria, for Lab 6 I analyzed
 What subwards are particularly vulnerable to flooding based on building density within a floodplain? 
 We used layers from Open Street Maps to get data on the buildings in Dar Es Salaam, and Resiliency Academy for the data layer for subwards. 
 
+# Loading the Data
+1. With the data as shapefile, load the given .csv into QGIS by adding a deliminated text layer. This table has no geometry yet.
+2. Connect to a Database: add a new connection for PostGIS, and open database manager. Next import the data into the database with import layer/file. Using a [code]() developed by Professor Holler
+
+
 This analysis had 4 main steps, and then smaller steps within each element of the analysis:
 1. Spatially defining an area for the floodplain: defined by land designated as "water" or "wetland" in Open Street Map. 
 
