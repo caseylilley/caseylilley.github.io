@@ -6,8 +6,10 @@ This process has several steps:
 
 ## Data
 I will be using the same dataset used for the [Twitter labs 9 & 10](dorian2.md). By using a previously analyzed dataset, we can compare results for maximum reproducibility across software tools. 
+
 Download the analyzed twitter data:[countiesTweets.shp](countiesTweets.shp)
-Use the R file with code and documentation: [Spatial Autocorrelation in R](Spatial Autocorrelation in R.R)
+
+Use the R file with code and documentation: [Spatial Autocorrelation in R](SpatialAutocorrelationR.R)
 
 ## Setting Up Workspace
 For this analysis, I am using RStudio Version 3.6.1, and packages `spdep` for spatial autocorrelation tools, `sf` for reading and interpreting data, and `RColorBrewer` for plotting and mapping outcomes. To set up the workspace, we will start by installing and calling these packages, as well as pointing the working directory to the same folder with the data saved as a shapefile. 
@@ -128,8 +130,10 @@ title("Local I Cluster Map")
 ## Results
 The map produced from using the same threshold distance for the Getis-Ord Gi* hotspot analysis looks similar to the map created with the same methodology in GeoDa, yet with some notable differences. The hotspots, or areas of significantly higher twitter activity per 100,000 people, appear almost identical. Only the county in Northern Maine that is significant in the GeoDa analysis does not appear in this analysis. Yet, there are very few counties that are significantly negative with lower normalized activity. 
 ![Gi*](gi_threshdist.png)
+
 Similarly, the map of the significant clusters of Moran's I have accurate hotspots but are missing the areas of low activity.
 ![moran](morandist.png)
+
 Running these two analyses with different neighborhood matrices produced similar results for this data, though this is not always the case. 
 
 ## Takeaways and Conclusion
