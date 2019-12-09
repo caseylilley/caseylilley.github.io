@@ -6,8 +6,8 @@ This process has several steps:
 
 ## Data
 I will be using the same dataset used for the [Twitter labs 9 & 10](dorian2.md). By using a previously analyzed dataset, we can compare results for maximum reproducibility across software tools. 
-Download the analyzed twitter data:[countiesTweets.shp]()
-Use the R file with code and documentation: [Spatial Autocorrelation in R]()
+Download the analyzed twitter data:[countiesTweets.shp](countiesTweets.shp)
+Use the R file with code and documentation: [Spatial Autocorrelation in R](Spatial Autocorrelation in R.R)
 
 ## Setting Up Workspace
 For this analysis, I am using RStudio Version 3.6.1, and packages `spdep` for spatial autocorrelation tools, `sf` for reading and interpreting data, and `RColorBrewer` for plotting and mapping outcomes. To set up the workspace, we will start by installing and calling these packages, as well as pointing the working directory to the same folder with the data saved as a shapefile. 
@@ -131,3 +131,10 @@ The map produced from using the same threshold distance for the Getis-Ord Gi* ho
 Similarly, the map of the significant clusters of Moran's I have accurate hotspots but are missing the areas of low activity.
 ![moran](morandist.png)
 Running these two analyses with different neighborhood matrices produced similar results for this data, though this is not always the case. 
+
+## Takeaways and Conclusion
+Although less intuitive and quick than GeoDa for spatial autocorrelation tests and hotspot analyses, R allows the user more possibilities. It is possible to manually change a neighborhood objects, to control and assign different values to objects that have no neighbor connections. R also allows us to conduct a cluster analysis on a much larger dataset because it can efficiently compute large matrices and is optimized to handle big data, whereas GeoDa has a long processing time.
+
+## References
+https://rstudio-pubs-static.s3.amazonaws.com/126356_ef7961b3ac164cd080982bc743b9777e.html
+https://rstudio-pubs-static.s3.amazonaws.com/176549_91ca98ae396e416e998542559536da33.html
