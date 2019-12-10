@@ -7,7 +7,8 @@ Malcomb et al. analyzed the drivers of vulnerability at the household level in M
 ![Weights](MalcombWeights.png)
 
 They then normalized each indicator variable from zero to five to represent the varying conditions for a household, with zero being the worst and five benig the best. The authors also disaggregated the DHS indicators to the village level, and then combined them to conduct the analysis at the administrative scale of Traditional Authorities. The overall score is then represented by the equation: household reselience = adaptive capacity + livelihood sensitivity - physical exposure, creating a composite map.
-![Fig5](MalcombMap.png)
+
+<img src="https://github.com/caseylilley/caseylilley.github.io/blob/master/MalcombMap.png" width="400">
 
 ## Methodology to Reproduce Analysis
 Data Sources:
@@ -20,6 +21,7 @@ Data Sources:
 
 ## Adaptive Capacity - Summarizing DHS Surveys by Traditional Authority 
 [sql code](https://github.com/GIS4DEV/GIS4DEV.github.io/tree/master/mwi)
+
 By examining the metadata for the DHS survey data, we collaboratively extracted the variables in Malcolm et al.'s assets and access analysis. As a class, we each got assigned a variable and wrote the SQL code to reclassify the data into quantiles. We dropped no data and null values within each of the 12 indicator variables, and then reclassified them in quintile ranks. We used best judgement to decide whether high or low values for each variable should be 1 or 5, based on what is more favorable for each variable. Then, to preserve the anonynmity of the DHS data, Professor Holler put together and polished the SQL code and gave us the aggregated data on the TA level. This is Malcomb et al's Figure 4, a map of average resiliency scores compared to our final version of the analysis. For one, our units were not the same, and we found higher pockets of high vulnerability areas in the center of the country.
 ![capacitymap](Screen Shot 2019-12-06 at 10.15.12 PM.png)
 
