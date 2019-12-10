@@ -1,4 +1,5 @@
-::Casey Lilley, hydrology analysis automation
+::Casey Lilley, hydrology analysis automation 10/3/2019
+::Open Source GIS at Middlebury College with Professor Holler
 ::SRTM DEM data
 
 ::set the path to your SAGA program
