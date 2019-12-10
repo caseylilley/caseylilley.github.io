@@ -1,5 +1,6 @@
-::Casey Lilley, hydrology analysis automation
-::ASTER DEM data
+:: Casey Lilley, hydrology analysis automation 10/3/2019
+:: Open Source GIS at Middlebury College with Professor Holler 
+:: ASTER DEM data
 
 ::set the path to your SAGA program
 SET PATH=%PATH%;c:\saga6
