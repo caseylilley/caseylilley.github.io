@@ -1,0 +1,124 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="native:centroids_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:centroids" type="QString"/>
+      <Option name="component_description" value="Centroids" type="QString"/>
+      <Option name="component_pos_x" value="385.86407766990277" type="double"/>
+      <Option name="component_pos_y" value="73.63106796116506" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:centroids_1" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="ALL_PARTS" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="citycenter" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:meancoordinates_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:meancoordinates" type="QString"/>
+      <Option name="component_description" value="Mean coordinate(s)" type="QString"/>
+      <Option name="component_pos_x" value="493.0485436893204" type="double"/>
+      <Option name="component_pos_y" value="170.5631067961164" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:meancoordinates_1" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="CBD_as_point" type="Map">
+          <Option name="child_id" value="native:meancoordinates_1" type="QString"/>
+          <Option name="component_description" value="CBD_as_point" type="QString"/>
+          <Option name="component_pos_x" value="684.6601941747575" type="double"/>
+          <Option name="component_pos_y" value="242.59223300970868" type="double"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" value="false" type="bool"/>
+          <Option name="name" value="CBD_as_point" type="QString"/>
+          <Option name="output_name" value="OUTPUT" type="QString"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:centroids_1" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="UID" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="WEIGHT" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="help" type="Map">
+    <Option name="ALG_CREATOR" value="Casey Lilley &amp; GEOG0323 at Middlebury" type="QString"/>
+    <Option name="ALG_DESC" value="Can find direction and distance from a central business district to surrounding tracts." type="QString"/>
+    <Option name="ALG_HELP_CREATOR" value="" type="QString"/>
+    <Option name="ALG_VERSION" value="" type="QString"/>
+    <Option name="HELP_URL" value="" type="QString"/>
+    <Option name="SHORT_DESCRIPTION" value="This model takes the City Center and finds the center as a point, takes tracts as input features and finds their centroids, and calculates the distance and the direction of the tracts from the CBD. " type="QString"/>
+    <Option name="citycenter" value="The business district in the model. Can be any shape." type="QString"/>
+    <Option name="fieldnameprefix" value="User choice of what to call output fields for distance and direction from the central business district. " type="QString"/>
+    <Option name="inputfeatures2" value="The city tracts around a central business district" type="QString"/>
+    <Option name="qgis:fieldcalculator_2:Direction Distance Output" value="A layer with new fields for the distance and direction of the centroid of each tract to the point at the center of the central business district." type="QString"/>
+  </Option>
+  <Option name="modelVariables"/>
+  <Option name="model_group" value="Middlebury" type="QString"/>
+  <Option name="model_name" value="Distance and Direction from Point" type="QString"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="citycenter" type="Map">
+      <Option name="data_types" type="List">
+        <Option value="-1" type="int"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="description" value="City Center" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="metadata"/>
+      <Option name="name" value="citycenter" type="QString"/>
+      <Option name="parameter_type" value="source" type="QString"/>
+    </Option>
+    <Option name="native:meancoordinates_1:CBD_as_point" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="data_type" value="0" type="int"/>
+      <Option name="default" type="invalid"/>
+      <Option name="description" value="CBD_as_point" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="metadata"/>
+      <Option name="name" value="native:meancoordinates_1:CBD_as_point" type="QString"/>
+      <Option name="parameter_type" value="sink" type="QString"/>
+      <Option name="supports_non_file_outputs" value="true" type="bool"/>
+    </Option>
+  </Option>
+  <Option name="parameters" type="Map">
+    <Option name="citycenter" type="Map">
+      <Option name="component_description" value="citycenter" type="QString"/>
+      <Option name="component_pos_x" value="128.621359223301" type="double"/>
+      <Option name="component_pos_y" value="117.43689320388347" type="double"/>
+      <Option name="name" value="citycenter" type="QString"/>
+    </Option>
+  </Option>
+</Option>
