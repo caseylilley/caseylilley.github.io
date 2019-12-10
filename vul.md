@@ -9,29 +9,37 @@ Malcomb et al. analyzed the drivers of vulnerability at the household level in M
 
 They then normalized each indicator variable from zero to five to represent the varying conditions for a household, with zero being the worst and five benig the best. The authors also disaggregated the DHS indicators to the village level, and then combined them to conduct the analysis at the administrative scale of Traditional Authorities. The overall score is then represented by the equation: household reselience = adaptive capacity + livelihood sensitivity - physical exposure, creating a composite map.
 
+<p align="center">
 <img src="https://github.com/caseylilley/caseylilley.github.io/blob/master/MalcombMap.png" width="500">
+</p>
 
 ## Methodology to Reproduce Analysis
 Data Sources:
-- DHS Survey Data
-- Traditional Authorities Shapefile for Malawi
-- DHS Cluster points
-- Estimated flood risk for flood hazards and exposition to drought events from the UNEP Global Risk Platform 
-- GADM version 2.8 Boundaries for Malawi
-- FEWSnet Livelihood Zones
+- DHS Survey Data: Apply for the data and agree to confidentiality terms on the DHS [website](https://www.dhsprogram.com/Data/)
+- DHS [Cluster points](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm)
+- Traditional Authorities [Shapefile](traditional_authorities.zip) for Malawi with 2 versions from the Census and GADM
+- Estimated flood risk for flood hazards and exposition to drought events from the [UNEP Global Risk Platform](https://preview.grid.unep.ch/)
+- [GADM version 2.8 Boundaries](https://gadm.org/download_country_v2.html) for Malawi, retrieved in Fall 2019 because Malcomb et al. does not specify when they downloaded the boundaries or the version
+- [FEWSnet Livelihood Zones](https://fews.net/fews-data/335)
+- [Major Lakes](http://www.masdap.mw/layers/geonode:major_lakes) from Open Street Map, using MASDAP
+- DHS Survey Region [boundaries](http://spatialdata.dhsprogram.com/boundaries/#view=table&countryId=MW)
 
-## Adaptive Capacity - Summarizing DHS Surveys by Traditional Authority 
-[sql code](https://github.com/GIS4DEV/GIS4DEV.github.io/tree/master/mwi)
+Using QGIS Desktop 3.8.1 with GRASS 7.6.1, this analysis used WGS 84 for the coordinate reference system (EPSG:4326). In my final analysis, I used a 2.5 minute resolution (0.04166666 decimal degrees), rather than the initial 5 minute resolution (0.08333333 decimal degrees) that was coarser. I used an extent of 32.66,-17.125: 35.875,-9.375, based off the drought layer that was correctly clipped to Malawi. 
+
+### Adaptive Capacity - Summarizing DHS Surveys by Traditional Authority 
+[sql code](vulnerabilitySQL.sql)
 
 By examining the metadata for the DHS survey data, we collaboratively extracted the variables in Malcolm et al.'s assets and access analysis. As a class, we each got assigned a variable and wrote the SQL code to reclassify the data into quantiles. We dropped no data and null values within each of the 12 indicator variables, and then reclassified them in quintile ranks. We used best judgement to decide whether high or low values for each variable should be 1 or 5, based on what is more favorable for each variable. Then, to preserve the anonynmity of the DHS data, Professor Holler put together and polished the SQL code and gave us the aggregated data on the TA level. This is Malcomb et al's Figure 4, a map of average resiliency scores compared to our final version of the analysis. For one, our units were not the same, and we found higher pockets of high vulnerability areas in the center of the country.
 
+<p align="center">
 <img src="https://github.com/caseylilley/caseylilley.github.io/blob/master/capacityMalc.png" width= "600">
+</p>
 
-## Sensitivity 
+### Sensitivity 
 Malcomb et al. used data from FewsNET 2005, which was not available, so we had to cut this part out of the analysis. Therefore, the final product at best is 80% the orginial analysis because the livelihood sensativity accounted for 20% of the final result. 
 
-## Exposure
-We quickly realized several potential issues for this part of the analysis. We had to download the global data for the flood risk layer because the data for Malawi was incomplete. Further, we have to clip areas out that are not included in Malcomb et al.'s work - including major lakes and national parks. We then resampled the layers to match each other, using a warp cell size with bilinear resmapling and a clip to restrict the analysis to the extent of Malawi. We first had to do a buffer to eliminate sliver polygons. The we recoded both layers to be on a quantile scale. For flood risk, this was simple because values were listed from 0-4, so by performing a raster calculation and adding 1 to each cell I normalized the values 1-5. For drought exposure, I used GRASS tools r.Quantile and r.Recode to reclassify the values into quantiles. 
+### Exposure
+We quickly realized several potential issues for this part of the analysis. We had to download the *global data layer* for flood risk because the data for Malawi was incomplete, and the data for Africa was mislabelled - it is actually population exposure to risk. After you download the data from the [UNEP Website](https://preview.grid.unep.ch/), we need to load the layers into PostGIS with a `raster2pgsql` command-line program. Further, we have to clip areas out, using `st_clip` that are not included in Malcomb et al.'s work - including major lakes and national parks. We then resampled the layers to match each other, using a warp cell size with bilinear resmapling and a clip to restrict the analysis to the extent of Malawi. We first had to do a buffer to eliminate sliver polygons. The we recoded both layers to be on a quantile scale. For flood risk, this was simple because values were listed from 0-4, so by performing a raster calculation and adding 1 to each cell I normalized the values 1-5. For drought exposure, I used GRASS tools `r.Quantile` and `r.Recode` to reclassify the values into quantiles. 
 
 ## Making the Model: Putting it all together
 Finally, we put these data sources together to try to reproduce Malcomb et al.'s Figure 4. Professor Holler gave us an initial [model](vulnerability.model3) to clip and correctly rasterize each layer so they match. This analysis used a geographic reference system of WGS 84 - EPSG:4326. Then I did the reclass steps described above for flood and drought risk layers, and combined all layers with a raster calculator based on Malcomb et al.'s equation. We needed to invert the adaptive capacity score so that a high score for capacity correlates with a high vulnerability. Thus, the equation was ((2-Adaptive Capacity)(0.40)) + ((Drought Exposure)(0.20)) + (Flood Risk(0.20)). But this [initial map](coarseMalc.PNG) was at a coarser resolution than Malcolm et al.'s model, so I altered the [model](vulnerability.Finer.model3) to include a parameter to define resolution. [image of model2](ModelResolution.JPG) This parameter defaults to 0.041667 decimal degrees - the final resolution I used - but a user can input their own number. This produced a final map pictured below.
@@ -60,14 +68,14 @@ As mentioned above, Malcomb et al. did not adequately acknowledge potential erro
 
 This case study has demonstrated just how important it is to make sure that the referent, the symbol, and the concept align as closely as possible, and that the authors are explicit in every step of their decisions and methodology. Providing the initial data and a GIS model they used would've greatly benefitted us in our analysis, and would have allowed us to more accurately reproduce the study. This is important to break down the "black box" of GIS and vulnerability indices. Because such a high level of variability and uncertainty exists in creating social vulnerability indices, I am doubtful that they are ever fully replicable. Hinkel and Tate have demonstrated that there is no one size fits all framework for vulnerability, with large variations in conceptual understandings, semantic definitions, and indicator choices across vulnerability studies (Hinkel 2010; Tate 2012). Additionally, vulnerability studies have to critically examine the purpose of their work, and make local decisions for how and if it should be measured. This makes replicability in the field very difficult, but reproducibilty can certainly be improved. 
 
-Resources: 
-Hinkel, J. (2011). “Indicators of vulnerability and adaptive capacity”: towards a clarification of the science–policy interface. Global Environmental Change, 21(1), 198-208.
+## Resources
+Hinkel, J. (2011). “Indicators of vulnerability and adaptive capacity”: towards a clarification of the science–policy interface. Global Environmental Change, 21(1), 198-208. https://doi.org/10.1016/j.gloenvcha.2010.08.002
 
-Malcomb, D. W., Weaver, E. A., & Krakowka, A. R. (2014). Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi. Applied geography, 48, 17-30.
+Malcomb, D. W., Weaver, E. A., & Krakowka, A. R. (2014). Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi. Applied geography, 48, 17-30. https://doi.org/10.1016/j.apgeog.2014.01.004
 
-Schuurman, N. (2008). Database ethnographies using social science methodologies to enhance data analysis and interpretation. Geography Compass, 2(5), 1529-1548.
+Schuurman, N. (2008). Database ethnographies using social science methodologies to enhance data analysis and interpretation. Geography Compass, 2(5), 1529-1548. https://doi.org/10.1111/j.1749-8198.2008.00150.x
 
-Tate, E. (2012). Social vulnerability indices: a comparative assessment using uncertainty and sensitivity analysis. Natural Hazards, 63(2), 325-347.
+Tate, E. (2012). Social vulnerability indices: a comparative assessment using uncertainty and sensitivity analysis. Natural Hazards, 63(2), 325-347. https://doi.org/10.1007/s11069-012-0152-2
 
 
 
