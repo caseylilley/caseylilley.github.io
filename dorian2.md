@@ -8,12 +8,14 @@ This analysis was conducted using RStudio Version 3.6.1, QGIS Version 3.8.1, and
 Using code developed by Professor Holler, we mined Twitter data from September 11, 2019 that contained keywords “dorian,” “hurricane” or “sharpiegate” to obtain 200,000 tweets. This datalayer is named "dorian" in the R-script and SQL code. We also downloaded 200,000 tweets from November 19, 2019 in order to understand the baseline Twitter activity across space, named "november". 
 
 Download csv files of the Status IDs of the twitter data used:
-[Dorian tweets](dorianData.csv)
-[Novemeber tweets](novemberData.csv)
+
+- [Dorian tweets](dorianData.csv)
+- [Novemeber tweets](novemberData.csv)
 
 Download the code used in each step of the analysis:
-[R-script](dorianTwitterScript.R)
-[SQL Code in PostGIS for QGIS](dorain.sql)
+
+- [R-script](dorianTwitterScript.R)
+- [SQL Code in PostGIS for QGIS](dorain.sql)
 
 ## Content Analysis in R: Common Language and Word Associations
 First, I conducted a content analysis of the most [common keywords](CountWords.png) in tweets during the storm. After removing stop words – filler words that are not specific to the content – I found the “hurricane,” “dorian,” and “alabama” were the most common three words, closely followed by “sharpiegate”. Notably, “bahamas”, “storm” and “people” were also used over 500 times in the 10,000 tweets, as were “trump” and “realdonaldtrump”. This suggests that content was divided along words that we would expect during a natural disaster, and referring to the President. 
@@ -32,5 +34,6 @@ This map shows the amount of twitter activity during Hurricane Dorian compared t
 
 Further, a [spatial hotspot analysis](tweetratesp05.png) of tweets normalized by population revealed locations of high significance. Coastal North and South Carolina as well as some parts of Florida have significantly higher twitter activity about the storm than expected based on population, and further inland throughout the Midwest has significantly lower clustering at an alpha level of 0.05. When looking at places that have significant [spatial clustering at the 0.001 level](tweetratesig.png), several counties in North Carolina remain significant and pockets in Illinois and throughout the Midwest are still significantly negative. 
 
+## Conclusions
 Overall, this shows that both the real storm surge path of hurricane Dorian and President Trump’s sharpie map of the storm influenced the content of Twitter activity during the storm. However, it seems that the storm’s actual pathway had a large effect on the spatial distribution of tweets: areas in North and South Carolina were more significantly clustered than in Alabama. This analysis was primarily inductive, which is similar to many Twitter use cases we have looked at as a class. It seems that Twitter data lends itself to more exploratory research on content, user sentiment, and location, rather than being hypothesis driven and grounded in theory. There is no doubt that this more bottom-up method of knowledge creation and data collection provides different benefits, getting access to real time data from a variety of people. Yet it also has its limitations, especially in geographic contexts. Because such a small percentage of total tweets have geographic information, and it is not always exactly precise, we may be selecting a certain subset of the population when analyzing only geographically relevant tweets. 
 
