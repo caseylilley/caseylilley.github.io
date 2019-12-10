@@ -13,7 +13,7 @@ Download csv files of the Status IDs of the twitter data used:
 
 Download the code used in each step of the analysis:
 [R-script](dorianTwitterScript.R)
-[SQL Code in PostGIS for QGIS](dorian.sql)
+[SQL Code in PostGIS for QGIS](dorain.sql)
 
 ## Content Analysis in R: Common Language and Word Associations
 First, I conducted a content analysis of the most [common keywords](CountWords.png) in tweets during the storm. After removing stop words – filler words that are not specific to the content – I found the “hurricane,” “dorian,” and “alabama” were the most common three words, closely followed by “sharpiegate”. Notably, “bahamas”, “storm” and “people” were also used over 500 times in the 10,000 tweets, as were “trump” and “realdonaldtrump”. This suggests that content was divided along words that we would expect during a natural disaster, and referring to the President. 
