@@ -7,7 +7,7 @@ My analysis focuses on buildings located within floodplains. What subwards are p
 I worked with Paige Dickson for this analysis. We used layers from Open Street Maps to get data on the buildings in Dar Es Salaam, and Resiliency Academy for the data layer for subwards. 
 
 ## Loading the Data into QGIS with osm2pgsql
-1. Retrieve the data: we used layers from Open Street Map(https://www.openstreetmap.org/) and downloaded all buildings, as well as floodplains with the tags mentioned above, and [Resiliency Academy](https://geonode.resilienceacademy.ac.tz/geoserver/ows) for the data layer for Subwards. With the data as shapefile, load the given .csv into QGIS by adding a deliminated text layer. This table has no geometry yet.
+1. Retrieve the data: we used layers from [Open Street Map](https://www.openstreetmap.org/) and downloaded all buildings, as well as floodplains with the tags mentioned above, and [Resiliency Academy](https://geonode.resilienceacademy.ac.tz/geoserver/ows) for the data layer for Subwards. With the data as shapefile, load the given .csv into QGIS by adding a deliminated text layer. This table has no geometry yet.
 2. Connect to a Database: add a new connection for PostGIS, and open database manager. Next import the data into the database with import layer/file. Using a [batch script](convertOSMholler.bat) developed by Professor Holler, change the database name to your database, and the user name to your user name in Notepad ++.
 3. Select which features and tags to load: edit this [dsm.style file](dsmholler.style) to select the tags and shape features important in your analysis. We added a tag for all natural and water features for the floodplain analysis.
 4. Run the batch script, and then transform the data from WGS84 to UTM Zone 36S.
@@ -46,5 +46,9 @@ It is also important to note that not all subwards have land in a floodplain: th
 Large datasets that are crowdsourced provide new and exciting avenues for knowledge and analysis in areas where data was previously inaccessible or not collected regularly. Yet also, it is important to consider some of the limitations of using Open Street Map and how uncertainty can propagate through the analysis to affect the results. Because multiple tags are used in OSM, by thousands of users contributing to the data, the initial dataset has more error and uncertainty than data that is highly regulated and controlled from a top-down source. Different people have different intepretations and associations of words, or boundary objects, and by coding data into a descrete category a lot of that nuance from the original data provider is lost (Schuurman 2008). Though the OSM user guide provides guidelines, there is still some uncertainty in the standardization of the data; it is unclear exactly what makes a location a wetland or floodplain, for example. Using just this data and creating an output on a map holds a certain authority to viewers, so it is important to acknowledge limitations. 
 
 ## References
+
+OpenStreetMap. (n.d.). Retrieved from https://www.openstreetmap.org/.
+
+Ramani Huria. (2016). Retrieved from https://ramanihuria.org/.
 
 Schuurman, N. (2008). Database ethnographies using social science methodologies to enhance data analysis and interpretation. Geography Compass, 2(5), 1529-1548. https://doi.org/10.1111/j.1749-8198.2008.00150.x
