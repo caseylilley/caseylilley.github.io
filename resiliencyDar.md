@@ -1,4 +1,4 @@
-# Modelling Flood Resiliency in Dar Es Salaam with Open Street Map
+# Modeling Flood Resiliency in Dar Es Salaam with Open Street Map
 
 By using data from the Resilience Academy and Ramani Huria, for Lab 6 I analyzed one aspect to flood resiliency in Dar Es Salaam subwards. Bottom-up methods of acquiring data with an open source platform, like Open Street Map, create new possibilities for detailed analysis in areas of the world that were previously difficult to get rich data on. Ramani Huria and the Resilience Academy are using community based mapping techniques to develop maps of the most flood-prone areas of the city and how flooding affects different groups of people. In Dar Es Salaam - a rapidly growing city with many informal settlements, there is a combination of planned flood and waster infrastructure, as well as less planned systems as the population exceeds the city's capacity. Therefore, there is a lot to analyze about the city, and we can learn tools in QGIS and a PostGIS database to handle such a large dataset. 
 
@@ -52,3 +52,5 @@ OpenStreetMap. (n.d.). Retrieved from https://www.openstreetmap.org/.
 Ramani Huria. (2016). Retrieved from https://ramanihuria.org/.
 
 Schuurman, N. (2008). Database ethnographies using social science methodologies to enhance data analysis and interpretation. Geography Compass, 2(5), 1529-1548. https://doi.org/10.1111/j.1749-8198.2008.00150.x
+
+[back to Main page](README.md)
