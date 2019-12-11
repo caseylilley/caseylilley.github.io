@@ -27,13 +27,13 @@ This speaks to some of the larger debates within geography on the role of GIS. S
 ## References
 Data Access and Dissemination Systems (DADS). (2010, October 5). American FactFinder. Retrieved from https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml.
 
-[Martin, K. S., & Wing, J. (2007). The discourse and discipline of GIS. Cartographica: The International Journal for Geographic Information and Geovisualization, 42(3), 235-248.](https://doi.org/10.3138/carto.42.3.235)
+Martin, K. S., & Wing, J. (2007). The discourse and discipline of GIS. Cartographica: The International Journal for Geographic Information and Geovisualization, 42(3), 235-248. https://doi.org/10.3138/carto.42.3.235
 
-[Sieber, R. (2004). Rewiring for a GIS/2. Cartographica: The international journal for geographic information and geovisualization, 39(1), 25-39.](https://doi.org/10.3138/T6U8-171M-452W-516R)
+Sieber, R. (2004). Rewiring for a GIS/2. Cartographica: The international journal for geographic information and geovisualization, 39(1), 25-39. https://doi.org/10.3138/T6U8-171M-452W-516R
 
 US Census Bureau. (2019, September 19). TIGER/Line Shapefiles. Retrieved from https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html.
 
-[Wright, D. J., Goodchild, M. F., & Proctor, J. D. (1997). Demystifying the persistent ambiguity of GIS as ‘tool’versus ‘science’. Annals of the Association of American Geographers, 87(2), 346-362.](https://doi.org/10.1111/0004-5608.872057)
+Wright, D. J., Goodchild, M. F., & Proctor, J. D. (1997). Demystifying the persistent ambiguity of GIS as ‘tool’versus ‘science’. Annals of the Association of American Geographers, 87(2), 346-362. https://doi.org/10.1111/0004-5608.872057
 
 
 [back to Main page](README.md)
