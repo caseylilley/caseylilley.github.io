@@ -32,7 +32,7 @@ Using QGIS Desktop 3.8.1 with GRASS 7.6.1, this analysis used WGS 84 for the coo
 By examining the metadata for the DHS survey data, we collaboratively extracted the variables in Malcolm et al.'s assets and access analysis. As a class, we each got assigned a variable and wrote the SQL code to reclassify the data into quantiles. We dropped no data and null values within each of the 12 indicator variables, and then reclassified them in quintile ranks. We used best judgement to decide whether high or low values for each variable should be 1 or 5, based on what is more favorable for each variable. Then, to preserve the anonynmity of the DHS data, Professor Holler put together and polished the SQL code and gave us the aggregated data on the TA level. This is Malcomb et al's Figure 4, a map of average resiliency scores compared to our final version of the analysis. For one, our units were not the same, and we found higher pockets of high vulnerability areas in the center of the country.
 
 <p align="center">
-<img src="https://github.com/caseylilley/caseylilley.github.io/blob/master/capacityMalc.png" width= "800">
+<img src="capacityMalc.png" width= "800">
 </p>
 
 ### Sensitivity 
@@ -45,7 +45,7 @@ We quickly realized several potential issues for this part of the analysis. We h
 Finally, we put these data sources together to try to reproduce Malcomb et al.'s Figure 4. Professor Holler gave us an initial [model](vulnerability.model3) to clip and correctly rasterize each layer so they match. This analysis used a geographic reference system of WGS 84 - EPSG:4326. Then I did the reclass steps described above for flood and drought risk layers, and combined all layers with a raster calculator based on Malcomb et al.'s equation. We needed to invert the adaptive capacity score so that a high score for capacity correlates with a high vulnerability. Thus, the equation was ((2-Adaptive Capacity)(0.40)) + ((Drought Exposure)(0.20)) + (Flood Risk(0.20)). But this [initial map](coarseMalc.PNG) was at a coarser resolution than Malcolm et al.'s model, so I altered the [model](vulnerability.Finer.model3) to include a parameter to define resolution. [image of model2](ModelResolution.JPG) This parameter defaults to 0.041667 decimal degrees - the final resolution I used - but a user can input their own number. This produced a final map pictured below.
 
 <p align="center">
-<img src="https://github.com/caseylilley/caseylilley.github.io/blob/master/MalcolmReproduce.png" width="500">
+<img src="MalcolmReproduce.png" width="500">
 </p>
 
 ## Analysis and Discussion
