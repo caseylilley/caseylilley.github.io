@@ -28,7 +28,7 @@ Using QGIS Desktop 3.8.1 with GRASS 7.6.1, this analysis used WGS 84 for the coo
 By examining the metadata for the DHS survey data, we collaboratively extracted the variables in Malcolm et al.'s assets and access analysis. As a class, we each got assigned a variable and wrote the SQL code to reclassify the data into quantiles. We dropped no data and null values within each of the 12 indicator variables, and then reclassified them in quintile ranks. We used best judgement to decide whether high or low values for each variable should be 1 or 5, based on what is more favorable for each variable. Then, to preserve the anonynmity of the DHS data, Professor Holler put together and polished the SQL code and gave us the aggregated data on the TA level. Below is our version of Malcomb et al's [Figure 4](https://doi.org/10.1016/j.apgeog.2014.01.004), a map of average resiliency scores compared to our final version of the analysis. For one, our units were not the same, and we found higher pockets of high vulnerability areas in the center of the country.
 
 <p align="center">
-<img src="capactiyMalc.png" width= "800">
+<img src="capactiyMalc.png" width= "500">
 </p>
 
 ### Sensitivity 
