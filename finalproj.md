@@ -163,9 +163,12 @@ Acarioli. (2017). Global and Local Measures of Spatial Autocorrelation. Retrieve
 
 Acarioli. (2015). Creating neighborhood matrices for Spatial Polygons in R (updated). Retrieved from https://aledemogr.com/2015/10/09/creating-neighborhood-matrices-for-spatial-polygons/
 
+Bivand, R. (2017). Creating Neighbours*. Retrieved from https://rdrr.io/rforge/spdep/f/inst/doc/nb.pdf
+
 Dennett, A. (2016). Practical 6: An Introduction to Analysing Spatial Patterns. Retrieved from: https://rstudio-pubs-static.s3.amazonaws.com/126356_ef7961b3ac164cd080982bc743b9777e.html
 
 Ludwig-Mayerhofer, W. (2016). Internet Guide to R: Defining Neighbors, Creating Weight Matrices. Retrieved from http://wlm.userweb.mwn.de/R/wlmRspma.htm
 
 O’Sullivan, D., & Unwin, D. (2010). Local statistics. In Geographic Information Analysis, 2nd Edition, Chapter 8. Retrieved from https://rspatial.org/raster/rosu/Chapter8.html
 
+[back to main page](README.md)
