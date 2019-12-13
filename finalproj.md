@@ -142,3 +142,5 @@ Although less intuitive and quick than GeoDa for spatial autocorrelation tests a
 ## References
 https://rstudio-pubs-static.s3.amazonaws.com/126356_ef7961b3ac164cd080982bc743b9777e.html
 https://rstudio-pubs-static.s3.amazonaws.com/176549_91ca98ae396e416e998542559536da33.html
+https://rspatial.org/raster/rosu/Chapter8.html
+
