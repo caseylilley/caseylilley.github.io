@@ -142,9 +142,12 @@ When mapping the significant clusters along the quadrants of spatial activity, a
 </P>
 
 However, the map produced from using the same threshold distance for the Getis-Ord Gi* hotspot analysis looks notably different for areas of "coldspots" or significantly negative twitter activity per 10,000 people. While you can see almost identical hotspots to the original analysis along the coastal region of the East, very few counties are significanly negative. This is curious, because the neighbor variables and weight matrix seem to be functioning similarly to how we would expect, and [this map](gstat.png) plots the value of the Getis-Ord Statistics. The Gi Statistic is represented as a Z-score. Greater values represent a greater intensity of clustering and the
-direction (positive or negative) indicates high or low clusters. Clearly here, values that are significant and in a negative direction are not appearing correctly. I tried this method altering several different methods of plotting and using different arguments, however it did function with more success on NDTI. 
+direction (positive or negative) indicates high or low clusters. Clearly here, values that are significant and in a negative direction are not appearing correctly. I tried this method altering several different methods of plotting and using different arguments, however it did function with more success on [NDTI](NDTI.png) and produced larger negative hotspots than initially found. 
 
-![Gi*](gi_threshdist.png)
+<p align= "center">
+<img src= "gi_threshdist.png" width = "600">
+</P>
+
 
 Running these two analyses with different neighborhood matrices produced similar results for this data, though that is not always the case for different datasets. It can be helpful to visualize the connections for comparison and selection by using command:
 ```
