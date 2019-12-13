@@ -151,6 +151,8 @@ direction (positive or negative) indicates high or low clusters. Clearly here, v
 
 Running these two analyses with different neighborhood matrices produced similar results for this data, though that is not always the case for different datasets. It can be helpful to visualize the connections for comparison and selection by using command:
 ```
+plot(tweets.sp, border = 'lightgrey')
+plot(selfdist, coords, add=TRUE, col = 'red')
 ```
 
 ## Takeaways and Conclusion
